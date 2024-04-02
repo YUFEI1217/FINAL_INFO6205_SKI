@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="583.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neu.application.mainPageController">
+   <children>
+      <Pane fx:id="UpPane" prefHeight="116.0" prefWidth="750.0" style="-fx-background-color: orange;">
+         <children>
+            <Label fx:id="lblWelcome" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="225.0" text="Welcome">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="247.0" layoutY="24.0" text="Ski Resort Home">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="MidPane" layoutY="116.0" prefHeight="184.0" prefWidth="750.0" style="-fx-background-color: #446880;">
+         <children>
+            <Button fx:id="btnSki" layoutX="439.0" layoutY="37.0" mnemonicParsing="false" onAction="#ClickSki" prefHeight="44.0" prefWidth="124.0" text="Rate Ski">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnIntroduction" layoutX="175.0" layoutY="37.0" mnemonicParsing="false" onAction="#ClickIntroduction" prefHeight="44.0" prefWidth="124.0" text="Introduction">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnUser" layoutX="175.0" layoutY="119.0" mnemonicParsing="false" onAction="#ClickUser" prefHeight="44.0" prefWidth="124.0" text="User">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnBar" layoutX="439.0" layoutY="119.0" mnemonicParsing="false" onAction="#ClickBarchart" prefHeight="44.0" prefWidth="124.0" text="Barchart">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="BotPane" layoutY="300.0" prefHeight="284.0" prefWidth="742.0" />
+   </children>
+</AnchorPane>

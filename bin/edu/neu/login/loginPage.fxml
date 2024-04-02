@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neu.login.loginController">
+   <tabs>
+      <Tab text="User">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="279.0" prefWidth="440.0">
+               <children>
+                  <Button fx:id="btnLogin" layoutX="194.0" layoutY="228.0" mnemonicParsing="false" onAction="#ClickMe" prefHeight="42.0" prefWidth="78.0" text="Login" />
+                  <Label layoutX="79.0" layoutY="105.0" prefHeight="28.0" prefWidth="84.0" text="Username:">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label layoutX="79.0" layoutY="159.0" prefHeight="26.0" prefWidth="72.0" text="Password:">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <PasswordField fx:id="Password" layoutX="173.0" layoutY="160.0" prefHeight="26.0" prefWidth="214.0" promptText="Enter Your Password" />
+                  <Label layoutX="163.0" layoutY="30.0" text="Ski area Login">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="Username" layoutX="173.0" layoutY="107.0" prefHeight="26.0" prefWidth="214.0" promptText="Enter Your Username" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
