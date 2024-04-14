@@ -3,10 +3,14 @@ package edu.neu.rateSki;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
+import edu.neu.application.DBHandler;
 import edu.neu.application.mainPageController;
 import edu.neu.dataStore.rateData;
 import javafx.event.ActionEvent;
@@ -30,6 +34,10 @@ public class rateSkiControllers implements Initializable{
 	public String commentSki;
 	public String rateTime;
     private static rateSkiControllers instance;
+    
+    private Connection connection;
+    private DBHandler handler;
+    private PreparedStatement pst;
 
     @FXML
     private ChoiceBox<Integer> cbRate;
@@ -39,16 +47,26 @@ public class rateSkiControllers implements Initializable{
 
     @FXML
     private TextArea txtContent;
+    
 
     @FXML
     void ClickRate(ActionEvent event) {
+    	
+    	String insert = "INSERT INTO UserRate(Username, Time, SkiResort, Rate, Content)" + "VALUES (?,?,?,?,?)";
+    	connection = handler.getConnection();
+    	try {
+			pst = connection.prepareStatement(insert);
+    	} catch (SQLException e) {
+			e.printStackTrace();
+		}
     	chooseSki = cbSki.getValue();
     	chooseRate = cbRate.getValue();
     	commentSki = txtContent.getText();
     	Date date = new Date();
     	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
     	rateTime = formatter.format(date);
-    	rateData rateTable = new rateData(username, rateTime, chooseSki,  chooseRate, commentSki);
+    	rateData rateTable = new rateData();
+    	rateTable.addRateData(this.username, rateTime, chooseSki,  chooseRate, commentSki);
     }
     
     @Override
@@ -56,6 +74,7 @@ public class rateSkiControllers implements Initializable{
 		
 		getRateUser(rateResultControllers.getInstance().getUsername(),mainPageController.getInstance().getPassword());
 		
+		handler = new DBHandler();
 		cbSki.getItems().addAll(skiResort);
 		cbRate.getItems().addAll(rate_number);
 		

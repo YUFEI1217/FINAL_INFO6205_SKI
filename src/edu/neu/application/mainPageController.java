@@ -58,6 +58,20 @@ public class mainPageController implements Initializable{
 
     @FXML
     void ClickIntroduction(ActionEvent event) {
+    	
+    	Stage primaryStage = new Stage();
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("/edu/neu/introduction/introductionPage.fxml"));
+			Scene scene = new Scene(root);
+			primaryStage.setTitle(null);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			primaryStage.setResizable(false);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
     }
 
@@ -86,11 +100,11 @@ public class mainPageController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
-		getMainUser(loginController.getInstance().getUsername(),loginController.getInstance().getPassword(), loginController.getInstance().getArraybag());
+		getMainUser(loginController.getInstance().getUsername(),loginController.getInstance().getPassword());
 		
 	}
 	
-	public void getMainUser(String user_name, String password) {
+	public void getMainUser(String user_name, String password ) {
 		this.username = user_name;
 		this.lblWelcome.setText("Welcome <" + user_name + ">");
 		this.userPassword = password;

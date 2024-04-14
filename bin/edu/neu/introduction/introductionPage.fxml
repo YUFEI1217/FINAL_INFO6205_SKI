@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.neu.introduction.introductionPageController">
+   <children>
+      <Pane fx:id="UpPane" prefHeight="116.0" prefWidth="750.0" style="-fx-background-color: orange;">
+         <children>
+            <Label layoutX="247.0" layoutY="24.0" text="Introduction">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="MidPane" layoutY="116.0" prefHeight="480.0" prefWidth="750.0" style="-fx-background-color: #446880;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="29.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Introduction.jpg" />
+               </image>
+            </ImageView>
+            <TextArea layoutX="249.0" layoutY="74.0" prefHeight="264.0" prefWidth="402.0" style="-fx-background-color: #446880;" text="In the world of winter sports, avid skiers and snowboarders are constantly seeking exhilarating experiences on the slopes of diverse ski resorts scattered across the United States. However, amidst the vast array of options, travelers often find themselves faced with a daunting challenge: how can they reliably discover the perfect ski destination that aligns with their preferences and expectations?&#10;&#10;To address this dilemma, we present the Ski Resort Rating and Comment System—a dynamic web application designed to revolutionize the way enthusiasts engage with and explore ski resorts nationwide. With a mission to empower users with comprehensive, up-to-date information and authentic insights, our project aims to bridge the gap between thrill-seekers and their dream skiing experiences.&#10;" wrapText="true" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
