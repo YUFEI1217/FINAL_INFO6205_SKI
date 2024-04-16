@@ -29,16 +29,13 @@ public class mainPageController implements Initializable{
     private Pane UpPane;
 
     @FXML
-    private Button btnBar;
+    private Button btnSearch;
 
     @FXML
     private Button btnIntroduction;
 
     @FXML
     private Button btnSki;
-
-    @FXML
-    private Button btnUser;
 
     @FXML
     private Label lblWelcome;
@@ -50,11 +47,6 @@ public class mainPageController implements Initializable{
     private static mainPageController instance;
     
     ArrayBag<String> mainUserBag = new ArrayBag<String>();
-
-    @FXML
-    void ClickBarchart(ActionEvent event) {
-
-    }
 
     @FXML
     void ClickIntroduction(ActionEvent event) {
@@ -87,14 +79,22 @@ public class mainPageController implements Initializable{
 			primaryStage.show();
 			primaryStage.setResizable(false);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
 
     @FXML
-    void ClickUser(ActionEvent event) {
-
+    void ClickSearch(ActionEvent event) {
+    	Stage primaryStage = new Stage();
+		Parent root;
+    	try {
+			root = FXMLLoader.load(getClass().getResource("/edu/neu/UserRateMatch/skiResortInfo.fxml"));
+			Scene scene = new Scene(root);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
     }
 
 	@Override

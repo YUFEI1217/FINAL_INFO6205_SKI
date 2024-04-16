@@ -168,7 +168,13 @@ public class ResortInfoController  implements Initializable{
 
 
 	public void UpdateUserRateMatch() {      	
-
+		if(!bst.search(txt_ResortName.getText())){
+			alert.setTitle("Information Dialog");
+			alert.setHeaderText(null);
+			alert.setContentText("Doesn't exist");
+			alert.showAndWait();
+		}else
+		{
 		table_UserRateMatch.getItems().clear();// 清空表格
 		try {
 			/* create jdbc connection */
@@ -185,7 +191,7 @@ public class ResortInfoController  implements Initializable{
 			
 
 			
-			String sqlMatList = "SELECT tb1.SkiResort,tb1.Introduction,tb1.Location,tb1.Website, tb2. avgRating FROM skiresort.resort as tb1 left join (SELECT SkiResort,  round(avg(Rate) ,1) as avgRating FROM skiresort.userrate group by SkiResort) as tb2 on tb1.SkiResort = tb2.SkiResort WHERE tb1.SkiResort LIKE'%"+txt_ResortName.getText() +"%';";
+			String sqlMatList = "SELECT tb1.SkiResort,tb1.Introduction,tb1.Location,tb1.Website, tb2. avgRating FROM skiresort.resort as tb1 left join (SELECT SkiResort,  round(avg(Rate) ,1) as avgRating FROM skiresort.userrate group by SkiResort) as tb2 on tb1.SkiResort = tb2.SkiResort WHERE tb1.SkiResort ='"+txt_ResortName.getText() +"';";
 			ResultSet resultSet = statement.executeQuery(sqlMatList); // 搭配select使用，其他update什么的都不用
 
 			while (resultSet.next()) {
@@ -261,4 +267,5 @@ public class ResortInfoController  implements Initializable{
 			}
 		});
 	}
+}
 }
